@@ -1,10 +1,10 @@
 {
-  "name": "Roteiro Prático — Sistema Nervoso",
-  "short_name": "Neuro UEM",
+  "name": "Neuro Games Studio 60+ — Semana 6",
+  "short_name": "Neuro Games 60+",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#050b12",
-  "theme_color": "#071521",
+  "background_color": "#09071b",
+  "theme_color": "#21145f",
   "icons": [
     {
       "src": "assets/icons/icon-192.png",

@@ -1,0 +1,9 @@
+NEURO GAMES STUDIO 60+ — PACOTE COMPLETO
+
+Chamada de hoje:
+https://forms.gle/ZXgj4DoXxcvxDrtq7
+
+Mantidos os caminhos e a estrutura de assets/img, assets/audio, assets/icons e assets/libras.
+O pacote inclui teste-colegas/ com questionário de jogabilidade, painel de resultados, gráfico, exportação de dados e relatório científico PDF com referências recentes e DOI.
+
+No GitHub, envie/substitua os arquivos mantendo as pastas existentes. Não apague seus arquivos de imagem e som já existentes no repositório.
