@@ -26,3 +26,9 @@ window.generatePDF=async()=>{
   }));
   window.print();
 };
+
+function sdb(){return new Promise((ok,no)=>{let r=indexedDB.open('NeuroEstruturas',1);r.onupgradeneeded=()=>r.result.createObjectStore('p',{keyPath:'id',autoIncrement:true});r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)})}
+window.addSP=async(i,files)=>{let d=await sdb(),t=d.transaction('p','readwrite'),s=t.objectStore('p');for(let f of files)s.add({i:String(i),blob:f});t.oncomplete=renderSP}
+async function renderSP(){let d=await sdb(),t=d.transaction('p'),r=t.objectStore('p').getAll();r.onsuccess=()=>{document.querySelectorAll('.structure-photos').forEach(e=>e.innerHTML='');r.result.forEach(p=>{let b=document.getElementById('sp-'+p.i);if(!b)return;let u=URL.createObjectURL(p.blob),e=document.createElement('div');e.className='structure-shot';e.innerHTML=`<img src="${u}" onclick="zoom(this.src)"><button onclick="delSP(${p.id})">✕</button>`;b.appendChild(e)})}}
+window.delSP=async id=>{let d=await sdb(),t=d.transaction('p','readwrite');t.objectStore('p').delete(id);t.oncomplete=renderSP}
+window.filterSP=q=>{q=q.toLocaleLowerCase('pt-BR');document.querySelectorAll('.structure-card').forEach(e=>e.style.display=e.dataset.structure.toLocaleLowerCase('pt-BR').includes(q)?'':'none')};renderSP();
